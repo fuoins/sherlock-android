@@ -13,12 +13,11 @@ android {
         targetSdk = 35
         versionCode = 1
         versionName = "0.1.0"
-
-        // 只做 64 位 ARM
-        ndk { abiFilters += listOf("arm64-v8a") }
     }
 
-    // 只产出单一 arm64-v8a APK，不生成 universal 包
+    // 只做 64 位 ARM：只产出单一 arm64-v8a APK，不生成 universal 包。
+    // 注意 AGP 禁止 ndk.abiFilters 与 splits.abi 同时设置，这里只用 splits。
+
     splits {
         abi {
             isEnable = true

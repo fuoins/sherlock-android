@@ -35,7 +35,7 @@ jobs:
           yes | "$SDKMANAGER" --licenses > /dev/null || true
           "$SDKMANAGER" --install "platforms;android-35" "build-tools;35.0.0" "platform-tools" > /dev/null
           echo "Installed packages:"
-          "$SDKMANAGER" --list-installed | head -20
+          "$SDKMANAGER" --list_installed 2>/dev/null | head -20 || true
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4

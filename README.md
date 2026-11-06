@@ -18,8 +18,8 @@
 
 **本工程只构建 `arm64-v8a` 一种 ABI**，不生成 32 位包，也不生成 universal 包：
 
-- `app/build.gradle.kts` 中 `ndk { abiFilters += listOf("arm64-v8a") }`
-- `splits { abi { reset(); include("arm64-v8a"); isUniversalApk = false } }`
+- `app/build.gradle.kts` 中 `splits { abi { reset(); include("arm64-v8a"); isUniversalApk = false } }`，只生成带 `arm64-v8a` 后缀的单个 APK
+- AGP 禁止 `ndk.abiFilters` 与 `splits.abi` 同时设置（会报 `Conflicting configuration`），因此只用 splits，产物名即标明架构
 - `minSdk = 26`（Android 8.0+，64 位 ARM 设备）
 
 产物为单个 `app-arm64-v8a-debug.apk`。装到 32 位设备或 x86 模拟器会失败，这是预期行为。
