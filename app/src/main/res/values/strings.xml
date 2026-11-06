@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sherlock Mobile</string>
+    <string name="subtitle">非官方 Sherlock 手机端 · 规则来自 sherlock-project/sherlock</string>
+    <string name="hint_username">输入用户名</string>
+    <string name="scan">开始扫描</string>
+    <string name="update_rules">更新规则</string>
+    <string name="share">分享结果</string>
+    <string name="show_all">显示全部</string>
+    <string name="include_nsfw">含 NSFW</string>
+</resources>
